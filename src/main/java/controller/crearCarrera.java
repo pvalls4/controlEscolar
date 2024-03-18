@@ -17,12 +17,12 @@ import jakarta.servlet.http.HttpServletResponse;
  *
  * @author Mati
  */
-@WebServlet(name = "carrera", urlPatterns = {"/carrera"})
-public class carrera extends HttpServlet {
+@WebServlet(name = "crearCarrera", urlPatterns = {"/crearCarrera"})
+public class crearCarrera extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        RequestDispatcher rd = request.getRequestDispatcher("GestionCarrera/carrera.jsp");
+        RequestDispatcher rd = request.getRequestDispatcher("GestionCarrera/crearCarrera.jsp");
         rd.forward(request, response);
     }
 
