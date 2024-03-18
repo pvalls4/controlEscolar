@@ -9,13 +9,13 @@
     <h1>Control Escolar</h1>
     <ul>
         <li>
-            <a href="carrera.jsp">Carrera</a>
+            <a href="./carrera">Carrera</a>
         </li>
         <li>
-            <a href="alumno.jsp">Alumno</a>
+            <a href="./alumno">Alumno</a>
         </li>
         <li>
-            <a href="catedratico.jsp">Catedr&aacute;tico</a>
+            <a href="./catedratico">Catedr&aacute;tico</a>
         </li>
     </ul>
   </body>
