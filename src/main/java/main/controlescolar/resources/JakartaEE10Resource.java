@@ -1,4 +1,4 @@
-package valls.controlescolar.resources;
+package main.controlescolar.resources;
 
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.Path;
