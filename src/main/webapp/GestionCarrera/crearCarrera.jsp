@@ -7,7 +7,7 @@
     </head>
     <body>
         <h1>Crear Carrera</h1>
-        <form method="get">
+        <form method="post">
             <label>Nombre Carrera</label>
             <input type="text" name="nombre"/>
             <input type="submit"/>

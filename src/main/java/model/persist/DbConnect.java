@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package model.persist;
 
 import java.io.FileInputStream;
@@ -14,14 +10,9 @@ import java.util.Properties;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-/**
- * encapsulates data for database connection.
- *
- * @author ProvenSoft
- */
 public final class DbConnect {
 
-    public static final String FILE_PATH = "files/dbConnection.properties";
+    public static final String FILE_PATH = "C:\\Users\\Mati\\Documents\\GitValls\\controlEscolar\\files\\dbConnection.properties";
     public static final String DRIVER = "com.mysql.cj.jdbc.Driver";
     public static final String PROTOCOL = "jdbc:mysql:";
     public static String HOST;

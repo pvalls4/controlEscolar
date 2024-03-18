@@ -14,7 +14,7 @@ public class Carrera {
         this.id = id;
     }
 
-    public Carrera() {
+    public Carrera(String nombre1) {
     }
 
     public int getId() {
