@@ -1,29 +1,19 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Servlet.java to edit this template
- */
-package controller;
+package controller.carrera;
 
 import jakarta.servlet.RequestDispatcher;
 import java.io.IOException;
-import java.io.PrintWriter;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
-/**
- *
- * @author Mati
- */
-@WebServlet(name = "alumno", urlPatterns = {"/alumno"})
-public class alumno extends HttpServlet {
-
+@WebServlet(name = "carrera", urlPatterns = {"/carrera"})
+public class carrera extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        RequestDispatcher rd = request.getRequestDispatcher("GestionAlumno/alumno.jsp");
+        RequestDispatcher rd = request.getRequestDispatcher("GestionCarrera/carrera.jsp");
         rd.forward(request, response);
     }
 

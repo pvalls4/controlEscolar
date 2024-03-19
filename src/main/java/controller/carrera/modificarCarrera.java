@@ -1,52 +1,36 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Servlet.java to edit this template
- */
-package controller;
+package controller.carrera;
 
 import jakarta.servlet.RequestDispatcher;
 import java.io.IOException;
-import java.io.PrintWriter;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import java.util.List;
-import model.Alumno;
 import model.Carrera;
-import model.persist.AlumnoDao;
 import model.persist.CarreraDao;
 
-/**
- *
- * @author Mati
- */
-@WebServlet(name = "crearAlumno", urlPatterns = {"/crearAlumno"})
-public class crearAlumno extends HttpServlet {
+@WebServlet(name = "modificarCarrera", urlPatterns = {"/modificarCarrera"})
+public class modificarCarrera extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        CarreraDao modelo = new CarreraDao();
-        List<Carrera> listaCarreras = modelo.listarCarreras();
-        request.setAttribute("listaCarreras", listaCarreras);
         response.setContentType("text/html;charset=UTF-8");
-        RequestDispatcher rd = request.getRequestDispatcher("GestionAlumno/crearAlumno.jsp");
+        /*CarreraDao modelo = new CarreraDao();
+        List<Carrera> listaCarreras = modelo.listarCarreras();
+        request.setAttribute("listaCarreras", listaCarreras);*/
+        RequestDispatcher rd = request.getRequestDispatcher("GestionCarrera/modificarCarrera.jsp");
         rd.forward(request, response);
     }
     
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
-        String nombre = request.getParameter("nombre");
-        String apellido = request.getParameter("apellido");
-        String email = request.getParameter("email");
-        String carrera = request.getParameter("carrera");
-        CarreraDao modelo = new CarreraDao();
-        Carrera carreraAsignada = modelo.buscarCarrera(new Carrera(carrera));
-        AlumnoDao nuevoAlumno= new AlumnoDao();
-        nuevoAlumno.agregarAlumno(new Alumno(nombre, apellido, email, carreraAsignada.getId()));
-    }
+                processRequest(request, response);
+                String nombre = request.getParameter("antiguoNombre");
+                String nuevoNombre = request.getParameter("nuevoNombre");
+                CarreraDao nuevaCarrera = new CarreraDao();
+                nuevaCarrera.modificarCarrera(new Carrera(nombre), new Carrera(nuevoNombre));
+            }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**

@@ -1,45 +1,21 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Servlet.java to edit this template
- */
-package controller;
+package controller.alumno;
 
 import jakarta.servlet.RequestDispatcher;
 import java.io.IOException;
-import java.io.PrintWriter;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import model.Carrera;
-import model.persist.CarreraDao;
-import model.persist.DbConnect;
 
-/**
- *
- * @author Mati
- */
-@WebServlet(name = "crearCarrera", urlPatterns = {"/crearCarrera"})
-public class crearCarrera extends HttpServlet {
+@WebServlet(name = "alumno", urlPatterns = {"/alumno"})
+public class alumno extends HttpServlet {
+
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        RequestDispatcher rd = request.getRequestDispatcher("GestionCarrera/crearCarrera.jsp");
+        RequestDispatcher rd = request.getRequestDispatcher("GestionAlumno/alumno.jsp");
         rd.forward(request, response);
-    }
-    
-    @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        processRequest(request, response);
-        String nombre = request.getParameter("nombre");
-        System.out.println(nombre);
-        CarreraDao nuevaCarrera = new CarreraDao();
-        System.out.println(nuevaCarrera);
-        System.out.println(nuevaCarrera.agregarCarrera(new Carrera(nombre)));
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -65,7 +41,11 @@ public class crearCarrera extends HttpServlet {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
-    
+    @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        processRequest(request, response);
+    }
 
     /**
      * Returns a short description of the servlet.

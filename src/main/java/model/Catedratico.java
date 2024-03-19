@@ -8,6 +8,10 @@ public class Catedratico {
         this.id = id;
         this.nombre = nombre;
     }
+    
+     public Catedratico(String nombre) {
+        this.nombre = nombre;
+    }
 
     public Catedratico() {
     }
