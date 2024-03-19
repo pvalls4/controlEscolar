@@ -3,19 +3,19 @@
 <html>
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title>Control Escolar</title>
+    <title>Carreras</title>
   </head>
   <body>
-    <h1>Control Escolar</h1>
+    <h1>Gestión de Catedráticos</h1>
     <ul>
         <li>
-            <a href="carrera.jsp">Carrera</a>
+            <a href="./crearCatedratico">Añadir catedrático</a>
         </li>
         <li>
-            <a href="alumno.jsp">Alumno</a>
+            <a href="./listarCatedraticos">Listar catedráticos</a>
         </li>
         <li>
-            <a href="catedratico.jsp">Catedr&aacute;tico</a>
+            <a href="./modificarCatedratico">Modificar catedrático</a>
         </li>
     </ul>
   </body>

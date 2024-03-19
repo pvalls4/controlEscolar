@@ -1,29 +1,25 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Servlet.java to edit this template
- */
-package controller;
+package controller.alumno;
 
 import jakarta.servlet.RequestDispatcher;
 import java.io.IOException;
-import java.io.PrintWriter;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import java.util.List;
+import model.Alumno;
+import model.persist.AlumnoDao;
 
-/**
- *
- * @author Mati
- */
-@WebServlet(name = "alumno", urlPatterns = {"/alumno"})
-public class alumno extends HttpServlet {
-
+@WebServlet(name = "listarAlumnos", urlPatterns = {"/listarAlumnos"})
+public class listarAlumnos extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        RequestDispatcher rd = request.getRequestDispatcher("GestionAlumno/alumno.jsp");
+        AlumnoDao modelo = new AlumnoDao();
+        List<Alumno> listaAlumnos = modelo.listarAlumnos();
+        request.setAttribute("listaAlumnos", listaAlumnos);
+        RequestDispatcher rd = request.getRequestDispatcher("GestionAlumno/listarAlumnos.jsp");
         rd.forward(request, response);
     }
 
@@ -41,6 +37,17 @@ public class alumno extends HttpServlet {
             throws ServletException, IOException {
         processRequest(request, response);
     }
+    
+    /*@Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        processRequest(request, response);
+        String nombre = request.getParameter("nombre");
+        System.out.println(nombre);
+        CarreraDao nuevaCarrera = new CarreraDao();
+        System.out.println(nuevaCarrera);
+        nuevaCarrera.agregarCarrera(new Carrera(nombre));
+    }*/
 
     /**
      * Handles the HTTP <code>POST</code> method.
@@ -50,11 +57,7 @@ public class alumno extends HttpServlet {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
-    @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        processRequest(request, response);
-    }
+    
 
     /**
      * Returns a short description of the servlet.
