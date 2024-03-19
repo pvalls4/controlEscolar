@@ -3,14 +3,17 @@ package model.persist;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import model.Carrera;
 
 public class CarreraDao {
 
     private final DbConnect dbConnect;
 
-    public CarreraDao() {
+    public CarreraDao(){
         dbConnect = new DbConnect();
+        //DbConnect.loadDriver();
     }
 
     private Carrera fromResultSet(ResultSet rs) throws SQLException {
@@ -76,6 +79,7 @@ public class CarreraDao {
 
         } catch (SQLException ex) {
             result = 0;
+            System.out.println(ex);
         }
         return result;
     }

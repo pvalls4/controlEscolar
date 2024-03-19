@@ -12,8 +12,11 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import model.Carrera;
 import model.persist.CarreraDao;
+import model.persist.DbConnect;
 
 /**
  *
@@ -36,7 +39,7 @@ public class crearCarrera extends HttpServlet {
         System.out.println(nombre);
         CarreraDao nuevaCarrera = new CarreraDao();
         System.out.println(nuevaCarrera);
-        nuevaCarrera.agregarCarrera(new Carrera(nombre));
+        System.out.println(nuevaCarrera.agregarCarrera(new Carrera(nombre)));
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
