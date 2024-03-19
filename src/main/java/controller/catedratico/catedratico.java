@@ -14,7 +14,7 @@ public class catedratico extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        RequestDispatcher rd = request.getRequestDispatcher("catedratico.jsp");
+        RequestDispatcher rd = request.getRequestDispatcher("GestionCatedratico/catedratico.jsp");
         rd.forward(request, response);
     }
 

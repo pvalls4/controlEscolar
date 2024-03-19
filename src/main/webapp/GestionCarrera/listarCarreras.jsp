@@ -1,9 +1,3 @@
-<%-- 
-    Document   : listarCarrera
-    Created on : 18 mar 2024, 13:42:38
-    Author     : Mati
---%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -13,13 +7,16 @@
     </head>
     <body>
         <h1>Listado de carreras:</h1>
-        <ol>
-            <%
-                ArrayList<String> listaCarreras = (ArrayList<String>)request.getAttribute("listaCarreras");
-                for (String carrera : listaCarreras) {
-            %>
-                <li><%= carrera %></li>
-            <% } %>
-        </ol>
+        
+        <c:if test="${not empty listaCarreras}">
+            <ul>
+                <c:forEach items="${listaCarreras}" var="carrera">
+                    <li>${carrera.nombre}</li> <!-- Suponiendo que "nombre" es un atributo de la clase Carrera -->
+                </c:forEach>
+            </ul>
+        </c:if>
+        <c:if test="${empty listaCarreras}">
+            <p>No hay carreras disponibles.</p>
+        </c:if>
     </body>
 </html>
