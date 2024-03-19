@@ -15,6 +15,13 @@ public class Alumno {
         this.email = email;
         this.idCarrera = idCarrera;
     }
+    
+    public Alumno(String nombre, String apellido, String email, int idCarrera) {
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.email = email;
+        this.idCarrera = idCarrera;
+    }
 
     public int getId() {
         return id;

@@ -12,6 +12,17 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>Hello World!</h1>
+        <h1>Modificar carrera:</h1>
+        <form method="get">
+            <select name="antiguoNombre">
+                <option value="carrera11">Carrera1</option>
+                <option value="carrera21">Carrera2</option>
+                <option value="carrera31">Carrera3</option>
+            </select>
+            <label>Nuevo nombre de la Carrera:</label>
+            <input typu="text" name="nuevoNombre"/>
+            <input type="submit" value="Enviar">
+        </form>
+        
     </body>
 </html>

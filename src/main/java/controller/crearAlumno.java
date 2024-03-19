@@ -13,35 +13,40 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import java.util.List;
+import model.Alumno;
 import model.Carrera;
+import model.persist.AlumnoDao;
 import model.persist.CarreraDao;
 
 /**
  *
  * @author Mati
  */
-@WebServlet(name = "listarCarreras", urlPatterns = {"/listarCarreras"})
-public class listarCarreras extends HttpServlet {
+@WebServlet(name = "crearAlumno", urlPatterns = {"/crearAlumno"})
+public class crearAlumno extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
         CarreraDao modelo = new CarreraDao();
         List<Carrera> listaCarreras = modelo.listarCarreras();
         request.setAttribute("listaCarreras", listaCarreras);
-        RequestDispatcher rd = request.getRequestDispatcher("GestionCarrera/listarCarreras.jsp");
+        response.setContentType("text/html;charset=UTF-8");
+        RequestDispatcher rd = request.getRequestDispatcher("GestionAlumno/crearAlumno.jsp");
         rd.forward(request, response);
     }
     
-    /*@Override
+    @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
         String nombre = request.getParameter("nombre");
-        System.out.println(nombre);
-        CarreraDao nuevaCarrera = new CarreraDao();
-        System.out.println(nuevaCarrera);
-        nuevaCarrera.agregarCarrera(new Carrera(nombre));
-    }*/
+        String apellido = request.getParameter("apellido");
+        String email = request.getParameter("email");
+        String carrera = request.getParameter("carrera");
+        CarreraDao modelo = new CarreraDao();
+        Carrera carreraAsignada = modelo.buscarCarrera(new Carrera(carrera));
+        AlumnoDao nuevoAlumno= new AlumnoDao();
+        nuevoAlumno.agregarAlumno(new Alumno(nombre, apellido, email, carreraAsignada.getId()));
+    }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**

@@ -6,16 +6,16 @@
     <title>Control Escolar</title>
   </head>
   <body>
-    <h1>Control Escolar</h1>
+    <h1>Gestión de Alumnos</h1>
     <ul>
         <li>
-            <a href="carrera.jsp">Carrera</a>
+            <a href="./crearAlumno">Añadir alumno</a>
         </li>
         <li>
-            <a href="alumno.jsp">Alumno</a>
+            <a href="./listarAlumnos">Listar alumnos</a>
         </li>
         <li>
-            <a href="catedratico.jsp">Catedr&aacute;tico</a>
+            <a href="./modificarAlumno">Modificar alumno</a>
         </li>
     </ul>
   </body>

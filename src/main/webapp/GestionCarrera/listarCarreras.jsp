@@ -12,6 +12,14 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>Hello World!</h1>
+        <h1>Listado de carreras:</h1>
+        <ol>
+            <%
+                ArrayList<String> listaCarreras = (ArrayList<String>)request.getAttribute("listaCarreras");
+                for (String carrera : listaCarreras) {
+            %>
+                <li><%= carrera %></li>
+            <% } %>
+        </ol>
     </body>
 </html>
