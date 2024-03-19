@@ -1,12 +1,12 @@
 package model.persist;
 
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
+//import java.io.FileInputStream;
+//import java.io.FileNotFoundException;
+//import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
-import java.util.Properties;
+//import java.util.Properties;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -42,21 +42,28 @@ public final class DbConnect {
     public Connection getConnection() throws SQLException {
         Connection conn = null;
         try {
-            Properties props = new Properties();
-            props.load(new FileInputStream(FILE_PATH));
-            HOST = props.getProperty("HOST");
-            BD_NAME = props.getProperty("BD_NAME");
-            USER = props.getProperty("USER");
-            PASSWORD = props.getProperty("PASSWORD");
+//            Properties props = new Properties();
+//            props.load(new FileInputStream(FILE_PATH));
+//            HOST = props.getProperty("HOST");
+//            BD_NAME = props.getProperty("BD_NAME");
+//            USER = props.getProperty("USER");
+//            PASSWORD = props.getProperty("PASSWORD");
             BD_URL = String.format("%s//%s/%s", PROTOCOL, HOST, BD_NAME);
+            HOST = "127.0.0.1";
+            BD_NAME = "bd_institucion";
+            USER = "root";
+            PASSWORD = "123456";
 
             conn = DriverManager.getConnection(BD_URL, USER, PASSWORD);
-
-        } catch (FileNotFoundException ex) {
-            Logger.getLogger(DbConnect.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (IOException ex) {
+        } catch (SQLException ex){
             Logger.getLogger(DbConnect.class.getName()).log(Level.SEVERE, null, ex);
         }
+        
+//        } catch (FileNotFoundException ex) {
+//            Logger.getLogger(DbConnect.class.getName()).log(Level.SEVERE, null, ex);
+//        } catch (IOException ex) {
+//            Logger.getLogger(DbConnect.class.getName()).log(Level.SEVERE, null, ex);
+//        }
         return conn;
     }
 }
