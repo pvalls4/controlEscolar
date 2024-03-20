@@ -9,13 +9,13 @@
     <h1>Control Escolar</h1>
     <ul>
         <li>
-            <a href="./carrera">Carrera</a>
+            <a href="/controlEscolar/carrera">Carrera</a>
         </li>
         <li>
-            <a href="./alumno">Alumno</a>
+            <a href="/controlEscolar/alumno">Alumno</a>
         </li>
         <li>
-            <a href="./catedratico">Catedr&aacute;tico</a>
+            <a href="/controlEscolar/catedratico">Catedr&aacute;tico</a>
         </li>
     </ul>
   </body>

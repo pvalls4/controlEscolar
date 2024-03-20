@@ -14,14 +14,14 @@ import model.persist.AlumnoDao;
 @WebServlet(name = "listarAlumnos", urlPatterns = {"/listarAlumnos"})
 public class listarAlumnos extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
-        AlumnoDao modelo = new AlumnoDao();
-        List<Alumno> listaAlumnos = modelo.listarAlumnos();
-        request.setAttribute("listaAlumnos", listaAlumnos);
-        RequestDispatcher rd = request.getRequestDispatcher("GestionAlumno/listarAlumnos.jsp");
-        rd.forward(request, response);
-    }
+        throws ServletException, IOException {
+            response.setContentType("text/html;charset=UTF-8");
+            AlumnoDao modelo = new AlumnoDao();
+            List<Alumno> listaAlumnos = modelo.listarAlumnos();
+            request.setAttribute("listaAlumnos", listaAlumnos);
+            RequestDispatcher rd = request.getRequestDispatcher("GestionAlumno/listarAlumnos.jsp");
+            rd.forward(request, response);
+        }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**

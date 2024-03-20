@@ -1,4 +1,4 @@
-package controller.carrera;
+package controller.catedratico;
 
 import jakarta.servlet.RequestDispatcher;
 import java.io.IOException;
@@ -7,25 +7,30 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import model.Carrera;
-import model.persist.CarreraDao;
+import java.util.List;
+import model.Catedratico;
+import model.persist.CatedraticoDao;
 
-@WebServlet(name = "crearCarrera", urlPatterns = {"/crearCarrera"})
-public class crearCarrera extends HttpServlet {
+@WebServlet(name = "modificarCatedratico", urlPatterns = {"/modificarCatedratico"})
+public class modificarCatedratico extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-        throws ServletException, IOException {
-            response.setContentType("text/html;charset=UTF-8");
-            RequestDispatcher rd = request.getRequestDispatcher("GestionCarrera/crearCarrera.jsp");
-            rd.forward(request, response);
-        }
+            throws ServletException, IOException {
+                response.setContentType("text/html;charset=UTF-8");
+                CatedraticoDao modelo = new CatedraticoDao();
+                List<Catedratico> listaCatedraticos = modelo.listarCatedraticos();
+                request.setAttribute("listaCatedraticos", listaCatedraticos);
+                RequestDispatcher rd = request.getRequestDispatcher("GestionCatedratico/modificarCatedratico.jsp");
+                rd.forward(request, response);
+            }
     
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
                 processRequest(request, response);
-                String nombre = request.getParameter("nombre");
-                CarreraDao nuevaCarrera = new CarreraDao();
-                System.out.println(nuevaCarrera.agregarCarrera(new Carrera(nombre)));
+                String idOld = request.getParameter("idCatedratico");
+                String nuevoNombre = request.getParameter("nuevoNombre");
+                CatedraticoDao nuevoCatedratico = new CatedraticoDao();
+                nuevoCatedratico.modificarCatedratico(Integer.parseInt(idOld), new Catedratico(nuevoNombre));
             }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

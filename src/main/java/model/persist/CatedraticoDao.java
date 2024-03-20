@@ -79,14 +79,14 @@ public class CatedraticoDao {
         return result;
     }
     
-    public int modificarCatedratico(Catedratico oldCatedratico, Catedratico updatedCatedratico) {
+    public int modificarCatedratico(int idOld, Catedratico updatedCatedratico) {
         int result = 0;
         try (Connection conn = dbConnect.getConnection()) {
             if (conn != null) {
                 String query = "UPDATE catedraticos SET nombre = ? WHERE id = ?;";
                 PreparedStatement st = conn.prepareStatement(query);
                 st.setString(1, updatedCatedratico.getNombre());
-                st.setInt(2, oldCatedratico.getId());
+                st.setInt(2, idOld);
                 result = st.executeUpdate();
             }
         } catch (SQLException ex) {

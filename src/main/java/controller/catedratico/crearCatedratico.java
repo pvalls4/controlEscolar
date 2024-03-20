@@ -7,29 +7,25 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import java.util.List;
 import model.Catedratico;
 import model.persist.CatedraticoDao;
 
 @WebServlet(name = "crearCatedratico", urlPatterns = {"/crearCatedratico"})
 public class crearCatedratico extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        CatedraticoDao modelo = new CatedraticoDao();
-        List<Catedratico> listaCatedraticos = modelo.listarCatedraticos();
-        request.setAttribute("listaCatedraticos", listaCatedraticos);
-        response.setContentType("text/html;charset=UTF-8");
-        RequestDispatcher rd = request.getRequestDispatcher("GestionCatedratico/crearCatedratico.jsp");
-        rd.forward(request, response);
-    }
+        throws ServletException, IOException {
+            response.setContentType("text/html;charset=UTF-8");
+            RequestDispatcher rd = request.getRequestDispatcher("GestionCatedratico/crearCatedratico.jsp");
+            rd.forward(request, response);
+        }
     
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
                 processRequest(request, response);
                 String nombre = request.getParameter("nombre");
-                CatedraticoDao modelo = new CatedraticoDao();
-                modelo.agregarCatedratico(new Catedratico(nombre));
+                CatedraticoDao nuevoCatedratico = new CatedraticoDao();
+                System.out.println(nuevoCatedratico.agregarCatedratico(new Catedratico(nombre)));
             }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

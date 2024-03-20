@@ -25,7 +25,7 @@ public class AlumnoDao {
         String nombre = rs.getString("nombre");
         String apellido = rs.getString("apellido");
         String email = rs.getString("email");
-        int idCarrera = rs.getInt("idCarrera");
+        int idCarrera = rs.getInt("idCarreras");
         //Instanciamos un nuevo objeto Alumno con los datos obtenidos
         alumno = new Alumno(id, nombre, apellido, email, idCarrera);
         return alumno;
@@ -48,6 +48,7 @@ public class AlumnoDao {
                 }
             }
         } catch (SQLException ex) {
+            System.out.println("Exception: " + ex);
             result = null;
         }
         return result;

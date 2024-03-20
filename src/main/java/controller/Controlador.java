@@ -358,7 +358,7 @@ public class Controlador {
             view.displayMessage("Modificando catedr�tico...");
             Catedratico updatedCatedratico = view.inputCatedratico();
             if (updatedCatedratico != null) {
-                result = modelo.modificarCatedratico(catedratico, updatedCatedratico);
+                result = modelo.modificarCatedratico(catedratico.getId(), updatedCatedratico);
                 if (result > 0) {
                     view.displayMessage("Catedr�tico modificado con �xito!");
                 } else {

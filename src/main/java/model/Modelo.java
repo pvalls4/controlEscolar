@@ -78,8 +78,8 @@ public class Modelo {
         return catedraticoDao.buscarCatedratico(idCatedratico);
     }
     
-    public int modificarCatedratico(Catedratico oldCatedratico, Catedratico updatedCatedratico){
-        return catedraticoDao.modificarCatedratico(oldCatedratico, updatedCatedratico);
+    public int modificarCatedratico(int idOld, Catedratico updatedCatedratico){
+        return catedraticoDao.modificarCatedratico(idOld, updatedCatedratico);
     }
     
     public int agregarCatedratico(Catedratico catedratico){

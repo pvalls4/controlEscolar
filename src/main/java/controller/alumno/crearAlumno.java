@@ -16,14 +16,15 @@ import model.persist.CarreraDao;
 @WebServlet(name = "crearAlumno", urlPatterns = {"/crearAlumno"})
 public class crearAlumno extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        CarreraDao modelo = new CarreraDao();
-        List<Carrera> listaCarreras = modelo.listarCarreras();
-        request.setAttribute("listaCarreras", listaCarreras);
-        response.setContentType("text/html;charset=UTF-8");
-        RequestDispatcher rd = request.getRequestDispatcher("GestionAlumno/crearAlumno.jsp");
-        rd.forward(request, response);
-    }
+        throws ServletException, IOException {
+            response.setContentType("text/html;charset=UTF-8");
+                CarreraDao modelo = new CarreraDao();
+                List<Carrera> listaCarreras = modelo.listarCarreras();
+                request.setAttribute("listaCarreras", listaCarreras);
+                System.out.println(listaCarreras);
+            RequestDispatcher rd = request.getRequestDispatcher("GestionAlumno/crearAlumno.jsp");
+            rd.forward(request, response);
+        }
     
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
@@ -32,11 +33,9 @@ public class crearAlumno extends HttpServlet {
                 String nombre = request.getParameter("nombre");
                 String apellido = request.getParameter("apellido");
                 String email = request.getParameter("email");
-                String carrera = request.getParameter("carrera");
-                CarreraDao modelo = new CarreraDao();
-                Carrera carreraAsignada = modelo.buscarCarrera(new Carrera(carrera));
-                AlumnoDao nuevoAlumno= new AlumnoDao();
-                nuevoAlumno.agregarAlumno(new Alumno(nombre, apellido, email, carreraAsignada.getId()));
+                String idCarrera = request.getParameter("idCarrera");
+                AlumnoDao nuevoAlumno = new AlumnoDao();
+                System.out.println(nuevoAlumno.agregarAlumno(new Alumno(nombre, apellido, email, Integer.parseInt(idCarrera))));
             }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

@@ -1,4 +1,5 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -9,16 +10,16 @@
         <h1>Crear Alumno</h1>
         <form method="get">
             <label>Nombre</label>
-            <input type="text" name="nombre"/>
+            <input type="text" name="nombre" required/>
             <label>Apellido</label>
-            <input type="text" name="apellido"/>
+            <input type="text" name="apellido" required/>
             <label>E-Mail</label>
-            <input type="text" name="email"/>
+            <input type="email" name="email" required/>
             <label>Carrera asignada</label>
-            <select name="carrera">
-                <option value="carrera1">Carrera1</option>
-                <option value="carrera2">Carrera2</option>
-                <option value="carrera3">Carrera3</option>
+            <select name="idCarrera">
+                <c:forEach items="${listaCarreras}" var="carrera">
+                    <option value="${carrera.id}">${carrera.id}. ${carrera.nombre}</option> <!-- Suponiendo que "nombre" es un atributo de la clase Carrera -->
+                </c:forEach>
             </select>
             <input type="submit"/>
         </form>
