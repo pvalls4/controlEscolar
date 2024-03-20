@@ -18,8 +18,6 @@ public class listarCarreras extends HttpServlet {
                 response.setContentType("text/html;charset=UTF-8");
                 CarreraDao modelo = new CarreraDao();
                 List<Carrera> listaCarreras = modelo.listarCarreras();
-                System.out.println(listaCarreras);
-                System.out.println("----------------------------------------------------------");
                 request.setAttribute("listaCarreras", listaCarreras);
                 RequestDispatcher rd = request.getRequestDispatcher("GestionCarrera/listarCarreras.jsp");
                 rd.forward(request, response);

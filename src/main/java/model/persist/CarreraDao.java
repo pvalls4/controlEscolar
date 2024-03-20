@@ -84,14 +84,15 @@ public class CarreraDao {
         return result;
     }
 
-    public int modificarCarrera(Carrera oldCarrera, Carrera updatedCarrera) {
+    public int modificarCarrera(int idOld, Carrera updatedCarrera) {
         int result = 0;
         try (Connection conn = dbConnect.getConnection()) {
             if (conn != null) {
                 String query = "UPDATE carreras SET nombre = ? WHERE id = ?;";
                 PreparedStatement st = conn.prepareStatement(query);
                 st.setString(1, updatedCarrera.getNombre());
-                st.setInt(2, oldCarrera.getId());
+                st.setInt(2, idOld);
+                System.out.println(st);
                 result = st.executeUpdate();
             }
         } catch (SQLException ex) {

@@ -22,7 +22,7 @@ public class modificarAlumno extends HttpServlet {
         rd.forward(request, response);
     }
     
-    @Override
+    /*@Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
                 processRequest(request, response);
@@ -30,7 +30,7 @@ public class modificarAlumno extends HttpServlet {
                 String nuevoNombre = request.getParameter("nuevoNombre");
                 CarreraDao nuevaCarrera = new CarreraDao();
                 nuevaCarrera.modificarCarrera(new Carrera(nombre), new Carrera(nuevoNombre));
-            }
+            }*/
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**

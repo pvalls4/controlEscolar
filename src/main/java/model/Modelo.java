@@ -29,8 +29,8 @@ public class Modelo {
         return carreraDao.buscarCarrera(carrera);
     }
     
-    public int modificarCarrera(Carrera oldCarrera, Carrera updatedCarrera){
-        return carreraDao.modificarCarrera(oldCarrera, updatedCarrera);
+    public int modificarCarrera(int idOld, Carrera updatedCarrera){
+        return carreraDao.modificarCarrera(idOld, updatedCarrera);
     }
     
     public int agregarCarrera(Carrera carrera){

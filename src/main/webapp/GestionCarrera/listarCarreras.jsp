@@ -1,4 +1,6 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -6,8 +8,7 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>Listado de carreras:</h1>
-        
+        <h1>Listado de carreras:</h1>        
         <c:if test="${not empty listaCarreras}">
             <ul>
                 <c:forEach items="${listaCarreras}" var="carrera">
