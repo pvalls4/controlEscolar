@@ -5,10 +5,10 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Modidicar Carrera</title>
+        <title>Eliminar Carrera</title>
     </head>
     <body>
-        <h1>Modificar Carrera:</h1>
+        <h1>Eliminar Carrera:</h1>
         <form method="post">
             <select name="idCarrera">
                 <c:if test="${not empty listaCarreras}">
@@ -20,10 +20,10 @@
                     <option>No hay carreras disponibles.</option>
                 </c:if>
             </select>
-            <label>Nuevo nombre de la Carrera:</label>
-            <input typu="text" name="nuevoNombre" required/>
+            <label>Borrar Carrera:</label>
             <input type="submit" value="Enviar">
         </form>
         
     </body>
 </html>
+

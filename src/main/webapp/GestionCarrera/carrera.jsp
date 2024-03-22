@@ -17,6 +17,9 @@
         <li>
             <a href="./modificarCarrera">Modificar carrera</a>
         </li>
+        <li>
+            <a href="./eliminarCarrera">Eliminar carrera</a>
+        </li>
     </ul>
   </body>
 </html>
