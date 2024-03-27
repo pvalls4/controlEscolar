@@ -63,3 +63,20 @@ body > ul > li > table{
     border: 1px solid black;
     border-radius: 4px;
 }
+
+body > form > input[type="email"]{
+    width: 200px;
+    height: 30px;
+    text-align: center;
+    border: 2px solid black;
+    border-radius: 4px;
+}
+
+.label{
+    width: 200px;
+    height: 30px;
+    text-align: center;
+    border: 2px solid black;
+    border-radius: 4px;
+    margin: 10px;
+}

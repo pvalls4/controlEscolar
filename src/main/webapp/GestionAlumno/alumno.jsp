@@ -3,19 +3,20 @@
 <html>
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title>Control Escolar</title>
+    <title>Gestión Alumnos</title>
+    <link rel="stylesheet" href="./css/styles.css" type="text/css"/>
   </head>
-  <body>
-    <h1>Gestión de Alumnos</h1>
-    <ul>
+  <body class="body">
+    <h1 class="title">Gestión de Alumnos</h1>
+    <ul class="list">
         <li>
-            <a href="./crearAlumno">Añadir alumno</a>
+            <a href="./crearAlumno">AÑADIR</a>
         </li>
         <li>
-            <a href="./listarAlumnos">Listar alumnos</a>
+            <a href="./listarAlumnos">LISTAR</a>
         </li>
         <li>
-            <a href="./modificarAlumno">Modificar alumno</a>
+            <a href="./modificarAlumno">MODIFICAR</a>
         </li>
     </ul>
   </body>

@@ -5,15 +5,16 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Listar Alumnos</title>
+        <link rel="stylesheet" href="./css/styles.css" type="text/css"/>
     </head>
-    <body>
-        <h1>Listado de alumnos:</h1>        
+    <body class="body">
+        <h1 class="title">Listado de alumnos:</h1>        
         <c:if test="${not empty listaAlumnos}">
-            <ul>
+            <ul class="list">
                 <c:forEach items="${listaAlumnos}" var="alumno">
                     <li>${alumno.nombre} ${alumno.apellido} / ${alumno.email} / ${alumno.idCarrera}</li> <!-- Suponiendo que "nombre" es un atributo de la clase Carrera -->
-                </c:forEach>
+                    </c:forEach>
             </ul>
         </c:if>
         <c:if test="${empty listaAlumnos}">

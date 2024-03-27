@@ -15,12 +15,6 @@
         <li>
             <a href="./listarCarreras">LISTAR</a>
         </li>
-        <li>
-            <a href="./modificarCarrera">MODIFICAR</a>
-        </li>
-        <li>
-            <a href="./eliminarCarrera">ELIMINAR</a>
-        </li>
     </ul>
   </body>
 </html>
