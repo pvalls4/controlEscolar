@@ -1,0 +1,30 @@
+.body{
+    background-color: lightblue;
+    text-align: center;
+}
+
+.list{
+    list-style: none;
+    padding: 40px 0px;
+}
+
+.title{
+    text-align: center;
+    font-weight: bold;
+    font-size: 60px;
+    padding-top: 40px;
+}
+
+body > ul > li{
+    text-align: center;
+    padding: 10px 0px;
+    margin: 10px 150px;
+    font-size: 20px;
+    border:1px solid black;
+    border-radius: 10px;
+    background-color: white;
+}
+body > ul > li > a{
+    text-decoration: none;
+    color: black;
+}

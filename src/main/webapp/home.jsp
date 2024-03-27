@@ -4,18 +4,20 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <title>Control Escolar</title>
+    
+    <link rel="stylesheet" href="css/styles.css" type="text/css"/>
   </head>
-  <body>
-    <h1>Control Escolar</h1>
-    <ul>
+  <body class="body">
+    <h1 class="title">Control Escolar</h1>
+    <ul class="list">
         <li>
-            <a href="/controlEscolar/carrera">Carrera</a>
+            <a href="/controlEscolar/carrera">CARRERA</a>
         </li>
         <li>
-            <a href="/controlEscolar/alumno">Alumno</a>
+            <a href="/controlEscolar/alumno">ALUMNO</a>
         </li>
         <li>
-            <a href="/controlEscolar/catedratico">Catedr&aacute;tico</a>
+            <a href="/controlEscolar/catedratico">CATEDRÁTICO</a>
         </li>
     </ul>
   </body>
