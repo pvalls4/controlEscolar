@@ -3,13 +3,15 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Crear carrera</title>
+        <link rel="stylesheet" href="./css/styles.css" type="text/css"/>
     </head>
-    <body>
-        <h1>Crear Carrera</h1>
+    <body class="body">
+        <h1 class="title">CREAR CARRERA</h1>
         <form method="post">
-            <label>Nombre Carrera</label>
-            <input type="text" name="nombre"/>
+            <!--<label>Ingrese nueva carrera:</label>-->
+            <input placeholder="Nombre" type="text" name="nombre"/>
+            <br>
             <input type="submit"/>
         </form>
     </body>

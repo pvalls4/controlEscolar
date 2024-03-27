@@ -4,21 +4,22 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <title>Carreras</title>
+    <link rel="stylesheet" href="./css/styles.css" type="text/css"/>
   </head>
-  <body>
-    <h1>Gestión de Carreras</h1>
-    <ul>
+  <body class="body">
+    <h1 class="title">Gestión de Carreras</h1>
+    <ul class="list">
         <li>
-            <a href="./crearCarrera">Crear carrera</a>
+            <a href="./crearCarrera">CREAR</a>
         </li>
         <li>
-            <a href="./listarCarreras">Listar carreras</a>
+            <a href="./listarCarreras">LISTAR</a>
         </li>
         <li>
-            <a href="./modificarCarrera">Modificar carrera</a>
+            <a href="./modificarCarrera">MODIFICAR</a>
         </li>
         <li>
-            <a href="./eliminarCarrera">Eliminar carrera</a>
+            <a href="./eliminarCarrera">ELIMINAR</a>
         </li>
     </ul>
   </body>
