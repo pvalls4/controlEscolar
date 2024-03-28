@@ -13,7 +13,8 @@
         <c:if test="${not empty listaAlumnos}">
             <ul class="list">
                 <c:forEach items="${listaAlumnos}" var="alumno">
-                    <li>${alumno.nombre} ${alumno.apellido} / ${alumno.email} / ${alumno.idCarrera}</li> <!-- Suponiendo que "nombre" es un atributo de la clase Carrera -->
+                    <li>${alumno.nombre} ${alumno.apellido} / ${alumno.email} / ${alumno.idCarrera}</li>
+                    
                     </c:forEach>
             </ul>
         </c:if>

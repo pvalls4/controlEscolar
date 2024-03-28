@@ -6,24 +6,28 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Modidicar Carrera</title>
+        <link rel="stylesheet" href="./css/styles.css" type="text/css"/>
     </head>
-    <body>
-        <h1>Modificar Carrera:</h1>
+    <body class="body">
+        <h1 class="title">Modificar Carrera:</h1>
         <form method="post">
-            <select name="idCarrera">
-                <c:if test="${not empty listaCarreras}">
-                    <c:forEach items="${listaCarreras}" var="carrera">
-                        <option value="${carrera.id}">${carrera.id}. ${carrera.nombre}</option> <!-- Suponiendo que "nombre" es un atributo de la clase Carrera -->
-                    </c:forEach>
-                </c:if>
-                <c:if test="${empty listaCarreras}">
-                    <option>No hay carreras disponibles.</option>
-                </c:if>
-            </select>
-            <label>Nuevo nombre de la Carrera:</label>
-            <input typu="text" name="nuevoNombre" required/>
+            <!--            <select name="idCarrera">
+            <c:if test="${not empty listaCarreras}">
+                <c:forEach items="${listaCarreras}" var="carrera">
+                    <option value="${carrera.id}">${carrera.id}. ${carrera.nombre}</option>
+                </c:forEach>
+            </c:if>
+            <c:if test="${empty listaCarreras}">
+                <option>No hay carreras disponibles.</option>
+            </c:if>
+        </select>-->
+            
+            <br>
+            <!--<label>Nuevo nombre de la Carrera:</label>-->
+            <input type="text" name="nuevoNombre" value="Nuevo nombre" required/>
+            <br>
             <input type="submit" value="Enviar">
         </form>
-        
+
     </body>
 </html>
