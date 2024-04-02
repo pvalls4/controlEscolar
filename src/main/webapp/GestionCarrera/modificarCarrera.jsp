@@ -9,7 +9,8 @@
         <link rel="stylesheet" href="./css/styles.css" type="text/css"/>
     </head>
     <body class="body">
-        <h1 class="title">Modificar Carrera ${carrera.nombre}:</h1>
+        <h1 class="title">Modificar Carrera</h1>
+        <h2 id="mayus">${carrera.nombre}</h2>
         <form method="post">
             <br>
             <input type="hidden" name="idCarrera" value="${carrera.id}">

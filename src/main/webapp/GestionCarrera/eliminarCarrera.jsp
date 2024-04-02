@@ -9,18 +9,18 @@
         <link rel="stylesheet" href="./css/styles.css" type="text/css"/>
     </head>
     <body class="body">
-        <h1 class="title">¿Eliminar Carrera ${carrera.nombre}?:</h1>
-        <div>
-            <form method="post">
-                <input type="hidden" name="idCarrera" value="${carrera.id}">
-                <input type="submit" value="Sí, eliminar">
-            </form>
-            <form method="post">
-                <input type="hidden" name="idCarrera" value="-1">
-                <input type="submit" value="¡No!">
-            </form>
-        </div>
-        
+        <h1 class="title">¿Eliminar Carrera <span id="mayus">${carrera.nombre}</span>?</h1>
+
+        <form method="post">
+            <input type="hidden" name="idCarrera" value="${carrera.id}">
+            <input type="submit" value="Sí, eliminar">
+        </form>
+        <form method="post">
+            <input type="hidden" name="idCarrera" value="-1">
+            <input style="width: 50px" type="submit" value="¡No!">
+        </form>
+
+
     </body>
 </html>
 

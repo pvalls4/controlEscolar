@@ -8,7 +8,7 @@
     </head>
     <body class="body">
         <h1 class="title">CREAR CARRERA</h1>
-        <form method="post">
+        <form method="post" action="crearCarrera">
             <!--<label>Ingrese nueva carrera:</label>-->
             <input placeholder="Nombre" type="text" name="nombre"/>
             <br>

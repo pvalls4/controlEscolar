@@ -22,10 +22,11 @@ public class crearCarrera extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-                processRequest(request, response);
                 String nombre = request.getParameter("nombre");
                 CarreraDao nuevaCarrera = new CarreraDao();
                 System.out.println(nuevaCarrera.agregarCarrera(new Carrera(nombre)));
+                
+                response.sendRedirect("carrera");
             }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

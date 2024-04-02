@@ -13,12 +13,13 @@
         <li>
             <a href="/controlEscolar/carrera">CARRERA</a>
         </li>
+<!--    Posibilidad de ampliar...    
         <li>
             <a href="/controlEscolar/alumno">ALUMNO</a>
         </li>
         <li>
             <a href="/controlEscolar/catedratico">CATEDRÁTICO</a>
-        </li>
+        </li>-->
     </ul>
   </body>
 </html>
