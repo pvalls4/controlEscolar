@@ -8,24 +8,18 @@
         <title>Eliminar Carrera</title>
         <link rel="stylesheet" href="./css/styles.css" type="text/css"/>
     </head>
-    <body class='body'>
-        <h1 class='title'>Eliminar Carrera:</h1>
-        <form method="post">
-            <!--            <select name="idCarrera">
-            <c:if test="${not empty listaCarreras}">
-                <c:forEach items="${listaCarreras}" var="carrera">
-                    <option value="${carrera.id}">${carrera.id}. ${carrera.nombre}</option>  Suponiendo que "nombre" es un atributo de la clase Carrera 
-                </c:forEach>
-            </c:if>
-            <c:if test="${empty listaCarreras}">
-                <option>No hay carreras disponibles.</option>
-            </c:if>
-        </select>-->
-            <h2>¿Estás seguro de borrar esta Carrera?</h2>
-            <br>
-            <input type="submit" value="Sí">
-            <input type="submit" value="No">
-        </form>
+    <body class="body">
+        <h1 class="title">¿Eliminar Carrera ${carrera.nombre}?:</h1>
+        <div>
+            <form method="post">
+                <input type="hidden" name="idCarrera" value="${carrera.id}">
+                <input type="submit" value="Sí, eliminar">
+            </form>
+            <form method="post">
+                <input type="hidden" name="idCarrera" value="-1">
+                <input type="submit" value="¡No!">
+            </form>
+        </div>
         
     </body>
 </html>

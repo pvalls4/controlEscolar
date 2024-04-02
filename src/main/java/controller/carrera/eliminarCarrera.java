@@ -17,8 +17,18 @@ public class eliminarCarrera extends HttpServlet {
             throws ServletException, IOException {
                 response.setContentType("text/html;charset=UTF-8");
                 CarreraDao modelo = new CarreraDao();
-                List<Carrera> listaCarreras = modelo.listarCarreras();
-                request.setAttribute("listaCarreras", listaCarreras);
+                
+                //Obtenemos el ID de la carrera a modificar
+                int idCarrera = Integer.parseInt(request.getParameter("id"));
+                
+                Carrera carrera = modelo.buscarCarrera(idCarrera);
+                System.out.println("Carrera a modificar: " + carrera);
+                
+                /*List<Carrera> listaCarreras = modelo.listarCarreras();
+                request.setAttribute("listaCarreras", listaCarreras);*/
+                
+                request.setAttribute("carrera", carrera);
+                
                 RequestDispatcher rd = request.getRequestDispatcher("GestionCarrera/eliminarCarrera.jsp");
                 rd.forward(request, response);
             }
@@ -26,10 +36,12 @@ public class eliminarCarrera extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-                processRequest(request, response);
-                String idDelete = request.getParameter("idCarrera");
-                CarreraDao eliminarCarrera = new CarreraDao();
-                eliminarCarrera.eliminarCarrera(new Carrera(Integer.parseInt(idDelete)));
+                int idDelete = Integer.parseInt(request.getParameter("idCarrera"));
+                if (idDelete!= -1) {
+                    CarreraDao modelo = new CarreraDao();
+                    modelo.eliminarCarrera(idDelete); // Si <- esto da 1, la consulta se ejecutó correctamente.
+                }
+                response.sendRedirect("/controlEscolar/listarCarreras");
             }
     
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

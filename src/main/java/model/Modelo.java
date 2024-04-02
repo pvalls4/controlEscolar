@@ -37,8 +37,8 @@ public class Modelo {
         return carreraDao.agregarCarrera(carrera);
     }
     
-    public int eliminarCarrera(Carrera carrera){
-        return carreraDao.eliminarCarrera(carrera);
+    public int eliminarCarrera(int idCarrera){
+        return carreraDao.eliminarCarrera(idCarrera);
     }
     
     public List<Alumno> listarAlumnos() {

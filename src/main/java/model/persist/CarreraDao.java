@@ -101,13 +101,13 @@ public class CarreraDao {
         return result;
     }
 
-    public int eliminarCarrera(Carrera carrera) {
+    public int eliminarCarrera(int idCarrera) {
         int result = 0;
         try (Connection conn = dbConnect.getConnection()) {
             if (conn != null) {
                 String query = "DELETE FROM carreras WHERE id = ?;";
                 PreparedStatement st = conn.prepareStatement(query);
-                st.setInt(1, carrera.getId());
+                st.setInt(1, idCarrera);
                 result = st.executeUpdate();
             }
         } catch (SQLException ex) {
