@@ -48,14 +48,14 @@ public class CarreraDao {
         return result;
     }
 
-    public Carrera buscarCarrera(Carrera carrera) {
+    public Carrera buscarCarrera(int idCarrera) {
         Carrera result = null;
         try (Connection conn = dbConnect.getConnection()) {
             //Si la conexión es exitosa
             if (conn != null) {
                 String query = "SELECT * FROM carreras WHERE id = ?;";
                 PreparedStatement st = conn.prepareStatement(query);
-                st.setInt(1, carrera.getId());
+                st.setInt(1, idCarrera);
                 ResultSet rs = st.executeQuery();
                 if (rs.next()) {
                     result = fromResultSet(rs);

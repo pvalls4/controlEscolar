@@ -19,11 +19,13 @@
                                 <th id="mayus">${carrera.nombre}</th>
                                 <td style="padding-left: 40px">
                                     <form action="modificarCarrera" method="get">
+                                        <input type="hidden" name="id" value="${carrera.id}">
                                         <input class="button" type="submit" value="Modificar"/>
                                     </form>
                                 </td>
                                 <td>
                                     <form action="eliminarCarrera" method="get">
+                                        <input type="hidden" name="id" value="${carrera.id}">
                                         <input class="button" type="submit" value="Eliminar"/>
                                     </form>
                                 </td>

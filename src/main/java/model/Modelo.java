@@ -25,8 +25,8 @@ public class Modelo {
         return carreraDao.listarCarreras();
     }
     
-    public Carrera buscarCarrera(Carrera carrera){
-        return carreraDao.buscarCarrera(carrera);
+    public Carrera buscarCarrera(int idCarrera){
+        return carreraDao.buscarCarrera(idCarrera);
     }
     
     public int modificarCarrera(int idOld, Carrera updatedCarrera){
